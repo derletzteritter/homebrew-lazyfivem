@@ -5,20 +5,20 @@
 class Lazyfivem < Formula
   desc ""
   homepage ""
-  version "0.0.111"
+  version "0.0.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/itschip/lazyfivem/releases/download/0.0.111/lazyfivem_0.0.111_Darwin_arm64.tar.gz"
-      sha256 "314d0ef0cac01c66fe6f99c330ca69f3038fc6571ef926037a47a5f34e982f47"
+    if Hardware::CPU.intel?
+      url "https://github.com/itschip/lazyfivem/releases/download/0.0.2/lazyfivem_0.0.2_Darwin_x86_64.tar.gz"
+      sha256 "585a905f8dbf9d6f2b98bbc6b3351012ceeeb76e91736f842e104ff9ee2de4af"
 
       def install
         bin.install "lazyfivem"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/itschip/lazyfivem/releases/download/0.0.111/lazyfivem_0.0.111_Darwin_x86_64.tar.gz"
-      sha256 "5ae55ef1ef418a4a8f35f4fd88867cec274cd8b9ae4837c7d85cd838d84b9706"
+    if Hardware::CPU.arm?
+      url "https://github.com/itschip/lazyfivem/releases/download/0.0.2/lazyfivem_0.0.2_Darwin_arm64.tar.gz"
+      sha256 "c014a764fc4a175bf70072a5bbb6a2c0a1d03fba2100ce889b539ef75f407835"
 
       def install
         bin.install "lazyfivem"
@@ -27,25 +27,25 @@ class Lazyfivem < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/itschip/lazyfivem/releases/download/0.0.111/lazyfivem_0.0.111_Linux_arm64.tar.gz"
-      sha256 "717d8db8596bd70680af5cc812d176dbf9b6f7cf79730c024a286b9aa5cec519"
-
-      def install
-        bin.install "lazyfivem"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/itschip/lazyfivem/releases/download/0.0.111/lazyfivem_0.0.111_Linux_armv6.tar.gz"
-      sha256 "d584b0aef4248f6a8f897562a5def58ddbc3adb17f95adf17e4025d66767debe"
+      url "https://github.com/itschip/lazyfivem/releases/download/0.0.2/lazyfivem_0.0.2_Linux_armv6.tar.gz"
+      sha256 "f657160fcf1915abf17834b5d9d8727bfba3b67e24bdc4a167dd1587c1355924"
 
       def install
         bin.install "lazyfivem"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/itschip/lazyfivem/releases/download/0.0.111/lazyfivem_0.0.111_Linux_x86_64.tar.gz"
-      sha256 "e2fd60bd5953fe966cdd1eb076a40cde8c0bfe7af81e4cb673b4a7eca2b980fd"
+      url "https://github.com/itschip/lazyfivem/releases/download/0.0.2/lazyfivem_0.0.2_Linux_x86_64.tar.gz"
+      sha256 "1437ba32f47c24574f2b384e0c25fcefa526a2d6d46dd38ce198d96117ce4331"
+
+      def install
+        bin.install "lazyfivem"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/itschip/lazyfivem/releases/download/0.0.2/lazyfivem_0.0.2_Linux_arm64.tar.gz"
+      sha256 "18ba41d6d829ada86410a082b17be9395780d6fbdb3ffc5e621f2f0b29b01012"
 
       def install
         bin.install "lazyfivem"
